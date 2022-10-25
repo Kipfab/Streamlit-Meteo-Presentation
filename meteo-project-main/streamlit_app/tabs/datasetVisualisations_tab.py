@@ -9,7 +9,7 @@ sidebar_name = "Dataset Visualisations"
 
 def run():
 
-    imagesPathRoot = '../images/'
+    imagesPathRoot = 'meteo-project-main/images/'
     
     st.title(title)
     

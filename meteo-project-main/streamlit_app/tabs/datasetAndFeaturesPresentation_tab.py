@@ -12,8 +12,8 @@ def run():
 
     st.title(title)
 
-    imagesPathRoot = '../images/'
-    path = '../data/weatherAUS.csv'
+    imagesPathRoot = 'meteo-project-main/images/'
+    path = 'meteo-project-main/data/weatherAUS.csv'
     df_raw = pd.read_csv(path, sep = ',')
     
     st.header('Features presentation')

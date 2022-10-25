@@ -15,7 +15,7 @@ st.set_page_config(
     page_icon="https://datascientest.com/wp-content/uploads/2020/03/cropped-favicon-datascientest-1-32x32.png",
 )
 
-cssPathRoot = '../streamlit_app/'
+cssPathRoot = 'meteo-project-main/streamlit_app/'
 with open(cssPathRoot + "style.css", "r") as f:
     style = f.read()
 

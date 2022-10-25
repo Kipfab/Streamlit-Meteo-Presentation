@@ -13,8 +13,7 @@ def run():
     # st.image("https://dst-studio-template.s3.eu-west-3.amazonaws.com/2.gif")
     st.image("https://dst-studio-template.s3.eu-west-3.amazonaws.com/3.gif")
     
-    # imagesPathRoot = '/Users/Fabien/MeteoProject/meteo-project-main/images/'
-    imagesPathRoot = '../images/'
+    imagesPathRoot = 'meteo-project-main/images/'
 
     st.title(title)
 

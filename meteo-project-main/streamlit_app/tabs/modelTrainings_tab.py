@@ -10,7 +10,7 @@ sidebar_name = "Model Trainings"
 
 def run():
 
-    imagesPathRoot = '../images/'
+    imagesPathRoot = 'meteo-project-main/images/'
     st.title(title)
 
     st.header('Metrics to evaluate models: Accuracy, Recall and F1')

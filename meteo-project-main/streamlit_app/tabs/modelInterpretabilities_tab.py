@@ -10,7 +10,7 @@ sidebar_name = "Model Interpretabilities"
 
 def run():
 
-    imagesPathRoot = '../images/'
+    imagesPathRoot = 'meteo-project-main/images/'
     st.title(title)
 
 

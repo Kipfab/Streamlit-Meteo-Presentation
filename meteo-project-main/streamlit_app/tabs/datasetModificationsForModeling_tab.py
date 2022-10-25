@@ -10,7 +10,7 @@ sidebar_name = "Dataset Modifications For Modeling"
 
 def run():
 
-    imagesPathRoot = '../images/'
+    imagesPathRoot = 'meteo-project-main/images/'
     st.title(title)
 
     st.header('Encoding the Location variable')
