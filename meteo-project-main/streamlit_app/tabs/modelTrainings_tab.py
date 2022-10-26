@@ -99,7 +99,7 @@ def run():
         • undersampling method;  
         • dataset independant.  
         
-        CatBoost model has a very good recall but poor accuracy.
+        CatBoost model has a very good recall (89%) but poor accuracy (around 75%).
         """
     )
        
