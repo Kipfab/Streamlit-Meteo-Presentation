@@ -127,10 +127,16 @@ def run():
     st.header('Global scores')    
     st.markdown(
         """       
+        All classifiers have all a relatively poor F1 scores: around 65%.  
+             
         Best scores for:  
-        • undersampling method;  
-        • XGBoost and Random Forest give the best results and are dataset independant;  
-        • CatBoost is a good classifier and is also dataset independant;  
+        • undersampling method.    
+        
+        Best classifiers:  
+        • XGBoost and Random Forest give the best results and are dataset independant;   
+        • Moreover, they also have good Recalls for the dominant class 0: around 80%.
+        
+        CatBoost is a good classifier and is also dataset independant.    
         
         Only exception for KNN classifier:  
         • best scores with df_4 and df_5 datasets and with oversampling method.  
