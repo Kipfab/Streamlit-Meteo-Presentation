@@ -23,7 +23,7 @@ def pprreedd(location = 'Perth'):
 
     data_path =  path.abspath(path.join(__file__ ,"../../.."))
     data_path = data_path + "/data/" + pathl
-    data_path = data_path.replace("/", "\\")
+    # data_path = data_path.replace("/", "\\")
 
     df_test = pd.read_csv(data_path, encoding='latin', skiprows=6)
     df_test.drop('Unnamed: 0', axis=1, inplace=True)

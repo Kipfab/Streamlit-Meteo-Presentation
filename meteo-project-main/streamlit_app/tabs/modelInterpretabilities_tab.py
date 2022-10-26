@@ -12,7 +12,7 @@ def run():
 
     imagesPathRoot = path.abspath(path.join(__file__ ,"../../.."))
     imagesPathRoot = imagesPathRoot + "/images/"
-    imagesPathRoot = imagesPathRoot.replace("/", "\\")
+    # imagesPathRoot = imagesPathRoot.replace("/", "\\")
 
     # imagesPathRoot = '/Users/Fabien/MeteoProject/meteo-project-main/images/'
     st.title(title)
