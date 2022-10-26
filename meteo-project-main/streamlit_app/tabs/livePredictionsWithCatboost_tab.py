@@ -15,13 +15,14 @@ from imblearn.metrics import classification_report_imbalanced
 
 title = "Live Predictions"
 sidebar_name = "Live Predictions"
+pathGitHubRoot = 'meteo-project-main'
 
 def pprreedd(location = 'Perth'):
 
     test_location = location
     pathl = location + '_09_2022.csv'
 
-    data_path =  path.abspath(path.join(__file__ ,"../../.."))
+    data_path =  pathGitHubRoot
     data_path = data_path + "/data/" + pathl
     # data_path = data_path.replace("/", "\\")
 
@@ -30,9 +31,9 @@ def pprreedd(location = 'Perth'):
 
     df_test['Location'] = test_location
 
-    data_climate =  path.abspath(path.join(__file__ ,"../../.."))
+    data_climate =  pathGitHubRoot
     data_climate = data_climate + "/data/" + 'Location_climate.csv'
-    data_climate = data_climate.replace("/", "\\")
+    #data_climate = data_climate.replace("/", "\\")
 
     df_climate = pd.read_csv(data_climate, sep=';')
     df_climate.drop(['Koppen climate classification desc'], axis=1, inplace=True)
@@ -215,16 +216,16 @@ def pprreedd(location = 'Perth'):
     df_4 = df_4.drop('WindDir3pm', axis=1)
 
 
-    scaler_path =  path.abspath(path.join(__file__ ,"../../.."))
+    scaler_path =  pathGitHubRoot
     scaler_path = scaler_path + "/model_scaler/" + 'catboost_std_scaler.bin'
-    scaler_path = scaler_path.replace("/", "\\")
+    #scaler_path = scaler_path.replace("/", "\\")
 
     scaler = load(scaler_path)
     test_data = scaler.transform(df_4)
 
-    model_path =  path.abspath(path.join(__file__ ,"../../.."))
+    model_path =  pathGitHubRoot
     model_path = model_path + "/model_scaler/" + 'catboost_model'
-    model_path = model_path.replace("/", "\\")
+    #model_path = model_path.replace("/", "\\")
 
     model_from_file = CatBoostClassifier()
     model_from_file.load_model(model_path)

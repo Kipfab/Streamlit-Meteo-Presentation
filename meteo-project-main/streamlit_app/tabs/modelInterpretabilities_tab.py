@@ -6,11 +6,12 @@ import os.path as path
 
 title = "Model Interpretabilities"
 sidebar_name = "Model Interpretabilities"
+pathGitHubRoot = 'meteo-project-main'
 
 
 def run():
 
-    imagesPathRoot = path.abspath(path.join(__file__ ,"../../.."))
+    imagesPathRoot = pathGitHubRoot
     imagesPathRoot = imagesPathRoot + "/images/"
     # imagesPathRoot = imagesPathRoot.replace("/", "\\")
 
