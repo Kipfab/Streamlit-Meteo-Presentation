@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
-import os.path as path
+
 
 title = "Model Interpretabilities"
 sidebar_name = "Model Interpretabilities"
@@ -10,11 +10,7 @@ sidebar_name = "Model Interpretabilities"
 
 def run():
 
-    imagesPathRoot = path.abspath(path.join(__file__ ,"../../.."))
-    imagesPathRoot = imagesPathRoot + "/images/"
-    imagesPathRoot = imagesPathRoot.replace("/", "\\")
-
-    # imagesPathRoot = '/Users/Fabien/MeteoProject/meteo-project-main/images/'
+    imagesPathRoot = '../images/'
     st.title(title)
 
 
@@ -53,43 +49,8 @@ def run():
         """
     )
 
-    st.header('Random Forest Model Interpretability Using Skater')
-      
-    st.markdown(
-        """
-        Model's hyperparameters:  
-        • dataset: undersampled df_4;    
-        • criterion: “entropy”;  
-        • max_features: “log2”;  
-        • n_estimators = 400.  
-        
-        Normalized importances of the ten most important features with Random Forest Model:            
-        """
-    )
     
-    img = Image.open(imagesPathRoot + "NormalizedImportanceRF.png")
-    st.image(img, width = 500)
-    
-    st.markdown(
-        """
-        • One variables has high importance compared to the others: Humidity3mp;  
-        • No variable resulting from the coding of categorical variables;  
-        
-        Cumulative feature importance with Random Forest model:      
-        """
-    )
-    
-    img = Image.open(imagesPathRoot + "CumulativeFeatureImportanceRF.png")
-    st.image(img, width = 500)
-    
-    st.markdown(
-        """
-        • to reach 95% cumulative feature importance model needs 30 features out of 39;    
-        • to reach 90% cumulative feature importance model needs 25 features out of 39.        
-        """
-    )
-        
-    st.header('XGBoost Model Interpretability Using Skater')
+    st.header('XGBoost Model Interpretability Using SHAP')
       
     st.markdown(
         """
@@ -127,8 +88,44 @@ def run():
     )
  
     
+    st.header('Random Forest Model Interpretability Using SHAP')
+      
+    st.markdown(
+        """
+        Model's hyperparameters:  
+        • dataset: undersampled df_4;    
+        • criterion: “entropy”;  
+        • max_features: “log2”;  
+        • n_estimators = 400.  
+        
+        Normalized importances of the ten most important features with Random Forest Model:            
+        """
+    )
     
-    st.header('Catboost Model Interpretability Using Skater')
+    img = Image.open(imagesPathRoot + "NormalizedImportanceRF.png")
+    st.image(img, width = 500)
+    
+    st.markdown(
+        """
+        • One variables has high importance compared to the others: Humidity3mp;  
+        • No variable resulting from the coding of categorical variables;  
+        
+        Cumulative feature importance with Random Forest model:      
+        """
+    )
+    
+    img = Image.open(imagesPathRoot + "CumulativeFeatureImportanceRF.png")
+    st.image(img, width = 500)
+    
+    st.markdown(
+        """
+        • to reach 95% cumulative feature importance model needs 30 features out of 39;    
+        • to reach 90% cumulative feature importance model needs 25 features out of 36.        
+        """
+    )
+    
+
+    st.header('Catboost Model Interpretability Using SHAP')
       
     st.markdown(
         """
@@ -157,7 +154,7 @@ def run():
     st.markdown(
         """
         • to reach 95% cumulative feature importance model needs 31 features out of 39;    
-        • to reach 90% cumulative feature importance model needs 25 features out of 39.        
+        • to reach 90% cumulative feature importance model needs 25 features out of 36.        
         """
     )
     
